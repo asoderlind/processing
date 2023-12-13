@@ -48,7 +48,17 @@
       xright = xright + speed;
       xcirc = xcirc + speed;
       
-      if (keyPressed()) 
+    if (keyPressed) {
+      if (key == 'd') {
+      x = x + speed;
+      } else if (key == 'a') {
+      x = x - speed;
+      } else if (key == 's') {
+      y = y + speed;
+      } else if (key == 'w') {
+      y = y - speed;
+      }
+  }
 
         
       fill(255);
