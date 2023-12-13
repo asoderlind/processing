@@ -8,21 +8,69 @@
  * determine the shape's position and size. 
  */
 
+class Lucia {
+    int xtop;
+    int ytop;
+    int xleft;
+    int yleft;
+    int xright;
+    int yright;
+    int xcirc;
+    int ycirc;
+    int xrad;
+    int yrad;
+  
+  Lucia(int cord) {
+      int xtop = cord;
+      int ytop = cord + 20;
+    
+      int xleft = cord - 50;
+      int yleft = cord + 100;
+    
+      int xright = cord + 30;
+      int yright = cord + 100;
+    
+      int xcirc = cord;
+      int ycirc = cord + 20;
+      
+      int xrad = cord - 50;
+      int yrad = cord - 50;
+  }
+  
+
+  public void spawn() {
+    fill(255);
+    triangle(xtop, ytop, xleft, yleft, xright, yright);
+    fill(255, 240, 233);
+    ellipse(xcirc, ycirc, xrad, yrad);
+  }
+
+}
+
 size(640, 360);
 background(0);
 noStroke();
 
-var xtop_1 = 100;
-var ytop_1 = 120;
+int cord = 100;
+int xtop = cord;
+int ytop = cord + 20;
 
-var xleft_1 = 18;
-var yleft_1 = 300;
+int xleft = cord - 50;
+int yleft = cord + 100;
 
-var xright_1 = 130
-var 
+int xright = cord + 30;
+int yright = cord + 100;
 
+int xcirc = cord;
+int ycirc = cord + 20;
+int xrad = cord - 50;
+int yrad = cord - 50;
+      
 fill(255);
-triangle(xtop_1, ytop_1, xleft_1, yleft_1, 130, 300);
-
+triangle(xtop, ytop, xleft, yleft, xright, yright);
 fill(255, 240, 233);
-ellipse(100, 120, 72, 72);
+ellipse(xcirc, ycirc, xrad, yrad);
+
+Lucia l;
+l = new Lucia(100);
+l.spawn();
