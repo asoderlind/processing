@@ -20,21 +20,17 @@ class Lucia {
     int xrad;
     int yrad;
   
-  Lucia(int cord) {
-      int xtop = cord;
-      int ytop = cord + 20;
-    
-      int xleft = cord - 50;
-      int yleft = cord + 100;
-    
-      int xright = cord + 30;
-      int yright = cord + 100;
-    
-      int xcirc = cord;
-      int ycirc = cord + 20;
-      
-      int xrad = cord - 50;
-      int yrad = cord - 50;
+  Lucia(int cordx, int cordy) {
+      xtop = cordx;
+      ytop = cordy + 20;
+      xleft = cordx - 50;
+      yleft = cordy + 100;    
+      xright = cordx + 30;
+      yright = cordy + 100;    
+      xcirc = cordx;
+      ycirc = cordy + 20;      
+      xrad = 50;
+      yrad = 50;
   }
   
 
@@ -51,26 +47,13 @@ size(640, 360);
 background(0);
 noStroke();
 
-int cord = 100;
-int xtop = cord;
-int ytop = cord + 20;
+Lucia lucias[];
+lucias = new Lucia[10];
 
-int xleft = cord - 50;
-int yleft = cord + 100;
+for (int i=1; i < 10; i++) {
+ lucias[i] = new Lucia(i*100, 100);
+}
 
-int xright = cord + 30;
-int yright = cord + 100;
-
-int xcirc = cord;
-int ycirc = cord + 20;
-int xrad = cord - 50;
-int yrad = cord - 50;
-      
-fill(255);
-triangle(xtop, ytop, xleft, yleft, xright, yright);
-fill(255, 240, 233);
-ellipse(xcirc, ycirc, xrad, yrad);
-
-Lucia l;
-l = new Lucia(100);
-l.spawn();
+for (int i=1; i < 10; i++) {
+ lucias[i].spawn();
+}
